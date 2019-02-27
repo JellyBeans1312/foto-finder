@@ -1,19 +1,29 @@
 class Photo {
-  constructor(id, title, image, body, favorite = false) {
-  this.id = id;
-  this.title = title;
-  this.body = body;
-  this.favorite = favorite;
+  constructor(title, caption, id, file, favorite) {
+    this.title = title;
+    this.caption = caption;
+    this.id = id;
+    this.file = file;
+    this.favorite = favorite || false;
   }
-  saveToStorage(newArr) {
-    var stringPhotos = JSON.stringify(newArr);
-    localStorage.setItem('stringifiedPhotos', stringPhotos);
-  }
-  deleteFromStorage(index) {
-    allPhtoos.splice(index, 1);
-    this.saveToStorage(allPhotos);
-  }
-  updatePhoto() {
 
+  saveToStorage(incomingArr) {
+    var stringified = JSON.stringify(incomingArr);
+    localStorage.setItem("stringifiedPhotos", stringified);
+  }
+
+  deleteFromStorage(index) {
+    imagesArr.splice(index, 1);
+    this.saveToStorage(imagesArr);
+  }
+
+  updatePhoto(cardText, category) {
+    this[category] = cardText
+    this.saveToStorage(imagesArr);
+  }
+
+  favoritePhoto() {
+    var favStatus = this.favorite = !this.favorite;
+    this.updatePhoto(favStatus, 'favorite')
   }
 }
