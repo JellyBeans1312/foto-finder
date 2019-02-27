@@ -96,22 +96,6 @@ function generateCard(newObject) {
 
 }
 
-function showShowButton() {
-  var showMore = document.getElementById('show-more');
-  if (imagesArr.length >= 9) {
-    showMore.classList.remove('hidden-msg');
-  } else {
-    showMore.classList.add('hidden-msg');
-  }
-}
-
-function addBtn() {
-  var showBtn = `
-    <input class="show-btn form-btn" type="submit" value="Show Less">
-    `
-  cardContainer.insertAdjacentHTML('afterend', showBtn)  
-}
-
 function deleteCard(event) { 
   var cardId = parseInt(event.target.closest('.box').dataset.id);
   if (event.target.className.includes('delete')) {
@@ -162,22 +146,6 @@ function filterFavorites(e) {
     filteredPhotos.forEach(function(photo) {
     generateCard(photo);
     });
-  }
-}
-
-function showPhotos() {
-  removeAllCards();
-  if (showBtn.value === 'Show less') {
-    var mostRecent = imagesArr.slice(-10);
-    mostRecent.forEach(function(photo) {
-    generateCard(photo);
-    });
-    showBtn.value = 'Show more';
-  } else if (imagesArr.length >= 10) {
-    imagesArr.forEach(function(photo) {
-    generateCard(photo);
-    });
-    showBtn.value = 'Show less';
   }
 }
 
