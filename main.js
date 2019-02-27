@@ -218,3 +218,7 @@ function findNumberOfFavorites() {
 function updateFilterFavoritesButton(num) {
   favoritesFilter.value = `View ${num} Favorites`;
 }
+
+function removeAllCards() {
+  cardContainer.innerText = '';
+}
