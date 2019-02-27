@@ -47,6 +47,11 @@ h1 {
   width: 15rem;
 }
 
+#search-btn {
+  height: 28px;
+  width: 40px;
+}
+
 form {
   display: flex;
   flex-direction: column; 
@@ -125,14 +130,14 @@ label {
   margin-bottom: 15px;
 }
 
-.photos-area {
+.card-area {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
 
-.photo-card {
+.box {
   background-color: #FFFFFF;
   border: 1.5px solid #96898A;
   color: #3B2B34;
@@ -169,6 +174,38 @@ h3 {
 .footer-icons {
   height: 25px;
 }
+.trash-span,
+.trash-span:hover,
+.favorite-true,
+.favorite-false,
+.favorite-false:hover {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  border: 0px;
+}
+
+
+.trash-span {
+  background: url(assets/delete.svg) no-repeat;
+}
+
+.trash-span:hover {
+  background: url(assets/delete-active.svg) no-repeat;
+}
+
+.favorite-true {
+  background: url(assets/favorite-active.svg) no-repeat;
+}
+
+.favorite-false {
+  background: url(assets/favorite.svg) no-repeat;
+}
+
+.favorite-false:hover {
+  background: url(assets/favorite-active.svg) no-repeat;
+}
+
 
 @media only screen and (max-width: 650px) {
   header {
