@@ -13,28 +13,25 @@
     <h1>FOTO<img class="header-logo" src="assets/foto-finder-logo.svg" />FINDER</h1>
     <div class="header-search">
       <input type="text" class="search-input" placeholder="Search">
-      <input type="image" class="magnify-me" src="assets/magnifying-glass.svg"></i>
+     <button id="search-btn" class="search"><i class="fas fa-search"></i></button>
     </div>
   </header>
-  <div class="top-section">
+  <div class="form-area">
     <form>
-      <label class="form-styles" for="title">Title</label>
-      <input class="title-input" type="text" id="title" maxlength="27">
-      <label class="form-styles" for="title">Caption</label>
-      <input class="title-input" type="text" id="caption" maxlength="100">
+      <label class="input-labels" for="title">Title</label>
+      <input class="title-input" type="text" id="title">
+      <label class="input-labels" for="title">Caption</label>
+      <input class="title-input" type="text" id="caption">
       <input type="file" name="file" id ="file" class="input-btn" accept="image/*">
       <label for="file">Choose File</label>
-      <div class="quality-buttons">
-        <input class="form-btn" type="submit" id="favorites-filter" value="View 1 Favorites">
+      <div class="secondary-btns">
+        <input class="form-btn" type="submit" id="favorites-toggle" value="View 1 Favorites">
         <input class="form-btn" type="submit" id="create" value="Add to Album">
       </div>
     </form>
   </div>
-  <section class="card-area">
-    <!-------- Appended Cards -------->
+  <section class="photos-area">
   </section>
-  <input class="show-btn form-btn" id="add-request" type="submit" value="Please add a photo" >
-  <input class="show-btn form-btn hidden-msg" id="show-more" type="submit" value="Show More">
 </body>
 <script type="text/javascript" src="photo.js"></script>
 <script type="text/javascript" src="main.js"></script>
