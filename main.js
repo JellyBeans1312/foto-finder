@@ -106,7 +106,6 @@ function deleteCard(event) {
     var index = imagesArr.indexOf(card);
     imagesArr[0].deleteFromStorage(index);
   }
-
 }
 
 function filterText() {
