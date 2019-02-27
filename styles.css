@@ -23,7 +23,7 @@ button {
 }
 
 .foto-logo {
-  height: 2rem;
+  height: 1em;
 }
 
 .search {
@@ -72,7 +72,7 @@ button {
 }
 
 
-.change-this-later {
+.label-titles {
   color: #938284;
   font-size: 1rem;
   font-weight: 600;
@@ -100,8 +100,27 @@ textarea {
   outline-color: #524649;
 }
 
-#choose-file, 
-.secondary-photo-btn {
+.input-btn {
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  z-index: -1;
+}
+
+.photo-btn + label{
+  background-color: #5B4447;
+  color: #FEFEFE;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  padding: 8px 0;
+  text-align: center;
+} 
+
+.secondary-photo-btns {
   background-color: #5B4447;
   color: #fff;
   cursor: pointer;
@@ -111,7 +130,7 @@ textarea {
   margin: 24px 0;
 }
 
-.secondary-photo-btn {
+.secondary-photo-btns {
   padding: 0 40px;
 }
 
@@ -122,58 +141,49 @@ textarea {
   text-align: center;
 }
 
-.photos {
-  background-color: #c2b2b4;
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
+.photos-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
-.js-photo-container {
-  border: solid 2px #ACAAB6;
-  grid-column: 2;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+.photo-card {
+  background-color: #FFFFFF;
+  border: 1.5px solid #96898A;
+  color: #3B2B34;
+  height: 300px;
+  margin: 35px 25px;
+  width: 225px;
 }
 
-.js-photo-title {
-  color: #5E5C6B;
-  font-size: 2rem;
-  font-weight: 800;
-  margin: 0;
-  padding: 1rem;
+.photo-card-text {
+  font-size: medium;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 10px;
 }
 
-.idea-box-body {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin: 0;
-  padding: 1rem;
+.photo-card-body {
+  line-height: 1.25;
 }
 
-.favorites-section {
-  align-items: center;
-  border-top: solid #ACAAB6 2px;
+.photo-card-image {
+  height: 125px;
+  width: 222px;
+}
+
+.photo-card-buttons {
+  background-color: #5B4447;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  top: 40px;
 }
 
-.favorites-section div {
-  align-items: center;
-  display: flex;
-}
-
-.buttons {
-  cursor: pointer;
-  height: 1.5rem;
-  padding: 2px 5px 0 5px;
-}
-
-.buttons:focus {
-  outline: none;
-}
-
-.quality-text {
-  color: #000;
+.footer-icons {
+  height: 25px;
 }
 
 @media only screen and (max-width: 840px) {
@@ -197,13 +207,8 @@ textarea {
 
   .search {
     bottom: 8%;
-    right: 13%;
+    right: 10%;
     width: 77%;
-  }
-
-  .js-photo-container {
-    display: inline;
-    height: fit-content;
   }
 }
 
@@ -211,6 +216,15 @@ textarea {
 
   .buttons-div {
     flex-direction: column;
+  }
+
+  .secondary-photo-btns {
+    margin-top: 10px;
+    margin-bottom: 0px;  
+  }
+
+  #add-photo {
+    margin-bottom: 10px
   }
 }
 

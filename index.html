@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="normalize.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <meta name="viewport" content="width= device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
-  <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
-  <title>Foto finder</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="assets/camera.png"/>
+  <title>FOTO FINDER</title>
 </head>
 <body>
   <header>
-    <h1 class="title">FOTO<img src="assets/foto-finder-logo.svg" class="foto-logo">FINDER</h1>
-      <form id="search-field">
-        <input type="search" id="search" class="search" placeholder="Search">
-        <button id="search-btn" class="search"><i class="fas fa-search"></i></button>
-      </form>
+    <h1>FOTO<img class="header-logo" src="assets/foto-finder-logo.svg" />FINDER</h1>
+    <div class="header-search">
+      <input type="text" class="search-input" placeholder="Search">
+      <input type="image" class="magnify-me" src="assets/magnifying-glass.svg"></i>
+    </div>
   </header>
-  <form class="form">
-    <h2 id="photo-title" class="change-this-later">Title</h2>
-      <input type="text" id="title-input" class="photo-inputs"/>
-      <h2 id="photo-caption" class="change-this-later">Caption</h2>
-      <textarea rows="4" cols="50" id="body-input" class="photo-inputs"></textarea>
-      <button id="choose-file">Choose File</button>
-      <div class="buttons-div">
-        <button class="secondary-photo-btn" id="favorites-filter">View <span id="favorites-counter"> 0</span> Favorites</button>
-        <button class="secondary-photo-btn" id="add-photo">Add to album </button>
+  <div class="top-section">
+    <form>
+      <label class="form-styles" for="title">Title</label>
+      <input class="title-input" type="text" id="title" maxlength="27">
+      <label class="form-styles" for="title">Caption</label>
+      <input class="title-input" type="text" id="caption" maxlength="100">
+      <input type="file" name="file" id ="file" class="input-btn" accept="image/*">
+      <label for="file">Choose File</label>
+      <div class="quality-buttons">
+        <input class="form-btn" type="submit" id="favorites-filter" value="View 1 Favorites">
+        <input class="form-btn" type="submit" id="create" value="Add to Album">
       </div>
     </form>
-    <section class="photos">
-      
-    </section>
+  </div>
+  <section class="card-area">
+    <!-------- Appended Cards -------->
+  </section>
+  <input class="show-btn form-btn" id="add-request" type="submit" value="Please add a photo" >
+  <input class="show-btn form-btn hidden-msg" id="show-more" type="submit" value="Show More">
 </body>
-  <script src="photo.js"></script>
-  <script src="main.js"></script>
-</html>
+<script type="text/javascript" src="photo.js"></script>
+<script type="text/javascript" src="main.js"></script>
